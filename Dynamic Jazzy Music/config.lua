@@ -1,4 +1,4 @@
-return {
+{
 	DJM_BP_RF = true,
     DJM_SP_DB = false,
 	DJM_SP_SV = true,
