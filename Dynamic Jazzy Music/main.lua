@@ -78,7 +78,7 @@ SMODS.Sound({
     key = "music_raise_the_stakes",
     path = "RAISETHESTAKES.ogg",
     select_music_track = function()
-        local check = G.GAME and G.GAME.blind and G.GAME.round_resets.ante > 8 and (G.GAME.blind.config.blind.boss and not G.GAME.blind.config.blind.boss.showdown)
+        local check = G.GAME and G.GAME.blind and G.GAME.round_resets.ante > G.GAME.win_ante and (G.GAME.blind.config.blind.boss and not G.GAME.blind.config.blind.boss.showdown)
         if config.DJM_EBB_RTS == true then return check and 1 or false
         else return false end
     end
@@ -126,7 +126,7 @@ SMODS.Sound({
     key = "music_endless",
     path = "Endless.ogg",
     select_music_track = function()
-        local check = G.GAME and G.GAME.blind and G.GAME.round_resets.ante > 8 and not G.shop
+        local check = G.GAME and G.GAME.blind and G.GAME.round_resets.ante > G.GAME.win_ante and not G.shop
         if config.DJM_EB_FF == true then return check and 0 or false
         else return false end
     end
@@ -138,7 +138,7 @@ SMODS.Sound({
     key = "music_endless_shop",
     path = "EndlessShop.ogg",
     select_music_track = function()
-        local check = G.GAME and G.shop and G.GAME.round_resets.ante > 8
+        local check = G.GAME and G.shop and G.GAME.round_resets.ante > G.GAME.win_ante
         if config.DJM_ES_BN == true then return check and 0 or false
         else return false end
     end
